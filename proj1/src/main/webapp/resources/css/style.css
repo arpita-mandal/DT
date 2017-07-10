@@ -1,0 +1,40 @@
+@CHARSET "ISO-8859-1";
+.navbar-default 
+{
+ background:#F5F6F0;
+ color:#404040;
+ font-size: 17px;
+ font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+ 
+}
+.navbar-form{
+	padding: 20px-40px;
+}
+.navbar-brand {
+	position:relative;
+    clear: left;
+    height: 50px;
+    font-size: 18px;
+    line-height: 70px;
+    padding-top: 0;
+    padding-left:0;
+    white-space: nowrap;
+	
+}
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 30px;
+    margin-right: 28px;
+    margin-bottom: 30px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+   
+}
+.row{
+	margin-left: 65px;
+
+}
