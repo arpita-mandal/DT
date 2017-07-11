@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.niit.proj1.controller;
 
 import java.security.Principal;
@@ -19,12 +16,15 @@ import com.niit.proj1.dao.CartItemDao;
 import com.niit.proj1.dao.CategoryDao;
 import com.niit.proj1.dao.ProductDao;
 import com.niit.proj1.dao.UserDao;
-import com.niit.proj1.dao.UserDao;
 import com.niit.proj1.model.Cart;
 import com.niit.proj1.model.CartItem;
 import com.niit.proj1.model.Product;
 import com.niit.proj1.model.User;
 
+/**
+ * @author Jo
+ *
+ */
 @Controller
 public class CartController {
 	@Autowired 
@@ -40,8 +40,8 @@ public class CartController {
 	 
 	
 	 @RequestMapping("/cart/showCart")
-	 public ModelAndView showProduct(HttpSession session){
-		 
+	 public ModelAndView showProduct(Principal principal , HttpSession session){
+		 String id=principal.getName();
 		 ModelAndView mv = new ModelAndView("cart");
 		 Cart cart= (Cart) session.getAttribute("cart");
 		 if(cart==null)
@@ -50,7 +50,7 @@ public class CartController {
 		 }
 		 else
 		 {
-			 mv.addObject("cartContent", cart.getCartItems());
+			 mv.addObject("cartContent", cartItemDao.getCartItemByUserId(id));
 			 mv.addObject("grandTotal", cart.getGrandTotal());
 		 }
 		 return mv;
@@ -59,7 +59,6 @@ public class CartController {
 	 private void updateCart(CartItem cartItem)
 	 {
 		 Cart c1=cartItem.getCart();
-		 
 		 c1.setGrandTotal(c1.getGrandTotal()+cartItem.getProduct().getProductPrice());
 		 cartDao.saveOrUpdate(c1);
 	 }
@@ -73,33 +72,38 @@ public class CartController {
 		 User u=userDao.getUsersById(id);
 		 //Cart cart = cartDao.getCartByUserId(id);
 		 Cart cart=u.getCart();
-				 
+		 		 
 		 System.out.println("Yes cart");
 		 
-		 List <CartItem> cartItems = cart.getCartItems();
-		 
+		 List <CartItem> cartItems = cartItemDao.getCartItemByUserId(id);
+		 System.out.println("pid = "+product.getProductId());
 		 for(CartItem cartItem:cartItems)
 		 {
-			if(cartItem.getProduct().getProductId()==productId)
+			if(cartItem.getProduct().getProductId().compareTo(productId)==0)
 			{
 				cartItem.setQuantity(cartItem.getQuantity()+1);
 				cartItem.setSubTotal(cartItem.getSubTotal()+product.getProductPrice());
 				cartItemDao.saveOrUpdate(cartItem);
-				updateCart(cartItem);
+				
 				session.setAttribute("cart", cartItem.getCart());
 				return mv;
+				 
 			}
 		 }
 		 
+		 
 		 CartItem item = new CartItem();
+		 item.setStatus("N");
 		 item.setCart(cart);
 		 item.setProduct(product);
 		 item.setQuantity(1);
 		 item.setSubTotal(product.getProductPrice());
 		 cartItemDao.saveOrUpdate(item);
-		 updateCart(item);
+		
 		 session.setAttribute("cart", item.getCart());
-		 return mv;
 		 
-	 }
+		
+		 return mv;
+		 }
 }
+		

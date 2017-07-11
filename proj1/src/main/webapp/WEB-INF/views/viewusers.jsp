@@ -15,19 +15,27 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>    
-  
-<h1>USERS LIST</h1>  
-<table border="2" width="70%" cellpadding="2">  
-<tr><th>Id</th><th>Name</th><th>Address</th></tr>  
+  <%@ include file="menu.jsp" %>
+<h2 align="center">USERS LIST</h2>  
+<table border="2" width="100%" cellpadding="2" align="center" style="border-radius: 5px; background-color: #f2f2f2; padding: 45px; font-size: 100%; height=100px; width=100px; ">  
+<tr>
+<th align="center">Id</th>
+<th align="center">Name</th>
+<th align="center">Address</th>
+<th align="center">User Image</th>
+<th align="center">Edit</th>
+<th align="center">Delete</th>
+</tr>  
    <c:forEach var="user" items="${list}">   
    <tr>  
-   <td>${user.userId}</td>  
-   <td>${user.userName}</td>  
-   <td>${user.userAddress}</td>
+   <td align="center">${user.userId}</td>  
+   <td align="center">${user.userName}</td>  
+   <td align="center">${user.userAddress}</td>
+   
      
-  <td><img src="${pageContext.request.contextPath}/${user.userImage}" height="50" width="50"></td>
-   <td><a href="editusers/${user.userId}">Edit</a></td>  
-   <td><a href="deleteusers/${user.userId}">Delete</a></td>  
+  <td align="center"><img src="${pageContext.request.contextPath}/${user.userImage}" height="50" width="50"></td>
+   <td align="center"><a href="editusers/${user.userId}"><span class="glyphicon glyphicon-edit"></span></a></td>  
+   <td align="center"><a href="deleteusers/${user.userId}"><span class="glyphicon glyphicon-trash"></span></a></td>  
    </tr>  
    </c:forEach>  
    </table>  

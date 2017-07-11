@@ -1,29 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="container" style="background-color:#f1f1f1">
-  <form class="form-horizontal" action="/action_page.php">
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="username">User Name:</label>
-      <div class="col-sm-10">
-        <input type="text" placeholder="Enter Username" name="username" required>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="password">Password:</label>
-      <div class="col-sm-10">          
-        <input type="password" placeholder="Enter Password" name="password" required>
-      </div>
-    </div>
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <div class="checkbox">
-          <label><input type="checkbox" name="remember"> Remember me</label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
-      </div>
-    </div>
-  </form>
+<head>
+  <title>THE ROYAL STORE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body >  
+<%@ include file="menu.jsp" %>
+ 
+<div>
+  <form:form method="POST" action="/proj1/editsave" enctype="multipart/form-data">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form:form>>
 </div>
+ 
+ </body>
+ </html>      

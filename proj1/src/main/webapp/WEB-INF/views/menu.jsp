@@ -10,9 +10,14 @@
         <span class="icon-bar"></span>                        
       </button>
       
-       
+       <c:if test="${pageContext.request.userPrincipal.name != null}">
+      <a class="navbar-brand" href="${pageContext.request.contextPath}/home1">
+      <img src="https://i.imgur.com/Rr7fSRn.jpg" class="img-circle" width="100" height="100"/></a>
+      </c:if>
+      <c:if test="${pageContext.request.userPrincipal.name == null}">
       <a class="navbar-brand" href="${pageContext.request.contextPath}/">
       <img src="https://i.imgur.com/Rr7fSRn.jpg" class="img-circle" width="100" height="100"/></a>
+      </c:if>
  	 </div>
  	 
 <div class="collapse navbar-collapse" id="myNavbar">
@@ -49,7 +54,7 @@
           </ul>
       <ul class="nav navbar-nav navbar-right">
       <c:if test="${pageContext.request.userPrincipal.name != null}">
-      <h3 style=" margin-right: 0;color:#0B151F;">${pageContext.request.userPrincipal.name}</h3>
+      <h3 style=" text-align: right ;color:#0B151F;">Welcome, ${pageContext.request.userPrincipal.name}</h3>
       <li><a href="${pageContext.request.contextPath}/cart/showCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
         <li><a href="${pageContext.request.contextPath}/logout"><span class="glyphicon glyphicon-log-out"></span> Log-out</a></li>
         
@@ -76,6 +81,20 @@
           <!-- display category names as menu option  -->
            <li><a href="${pageContext.request.contextPath}/manageProduct">Add Product</a></li>
            <li><a href="${pageContext.request.contextPath}/viewproducts">View Product</a></li>
+           </ul>
+        </li> 
+   </security:authorize>
+      
+<security:authorize access="hasRole('ROLE_ADMIN')">				
+  <li class="dropdown">
+        
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage Users <span class="caret"></span></a>
+         <!-- <ul class="dropdown-menu">  is used to create the sub menu items -->
+          <ul class="dropdown-menu">
+          
+          <!-- display category names as menu option  -->
+           <li><a href="${pageContext.request.contextPath}/viewusers"> View and Edit Users</a></li>
+           
            </ul>
         </li> 
    </security:authorize>

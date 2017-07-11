@@ -7,10 +7,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.proj1.model.Category;
 import com.niit.proj1.model.Product;
-@Repository
+@Repository("categoryDao")
+@Transactional
 public class CategoryDaoImpl implements CategoryDao {
 	@Autowired 
 	private SessionFactory sessionFactory;

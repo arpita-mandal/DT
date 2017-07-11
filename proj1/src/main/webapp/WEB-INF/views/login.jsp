@@ -25,6 +25,7 @@
          </div>
     </c:if>
 <%@include file="menu.jsp" %>
+<h2 style="color: #595959;text-align: center;"> Login</h2>
 <form name='f' action="${pageContext.request.contextPath}/j_spring_security_check" 
 
 method='POST'>

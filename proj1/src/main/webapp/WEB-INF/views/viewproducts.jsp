@@ -32,6 +32,7 @@
    </c:forEach>  
    </table>  
    <br/>  
-   <a href="manageproduct">Add New product</a>  
+   <a href="manageProduct">Add New product</a>
+     
    </body>
    </html>

@@ -18,9 +18,10 @@
 </head>
 <body>
 <%@ include file="menu.jsp" %>
-
-<div> 
-<table class="table table-bordered table-condensed"   style="width:70%;">  
+<div class="container">
+ <table class="table">
+    <thead>
+    <c:set var="total" scope="session" />
 <tr><th>Name</th><th>Product Id</th><th>Category Name</th><th>Product Price</th></tr>  
    <c:forEach var="content" items="${cartContent}">   
    <tr>  
@@ -29,12 +30,12 @@
    <td>${content.product.productId}</td>
    <td> ${content.product.category.categoryName} </td>
    <td>${content.subTotal}</td>
-  
+   <c:set var="total"  value="${total + content.subTotal }" scope="session"/>
      
    
    </tr>
    </c:forEach>  
-   <tr><td colspan="4">Total:  ${grandTotal}</td> </tr>
+   <tr><td colspan="4">Total:  ${total}</td> </tr>
    </table>  
    
    

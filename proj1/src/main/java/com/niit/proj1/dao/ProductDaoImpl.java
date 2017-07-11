@@ -16,7 +16,6 @@ import com.niit.proj1.model.User;
 
 @Repository("productDao")
 @Transactional
-
 public class ProductDaoImpl implements ProductDao {
 	@Autowired
 	private SessionFactory sessionFactory;

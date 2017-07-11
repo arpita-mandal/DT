@@ -25,7 +25,8 @@ public class Cart implements Serializable{
 	
 	@OneToMany(mappedBy="cart", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private List<CartItem> cartItems;
-
+	
+	
 	public int getCartId() {
 		return cartId;
 	}
