@@ -12,11 +12,11 @@
       
      <c:if test="${pageContext.request.userPrincipal.name == null}">  
       <a class="navbar-brand" href="${pageContext.request.contextPath}/">
-      <img src="https://i.imgur.com/Rr7fSRn.jpg" class="img-circle" width="50" height="50"/></a>
+      <img src="https://i.imgur.com/H78uXCu.jpg" class="img-rounded" width="150" height="50"/></a>
       </c:if>
       <c:if test="${pageContext.request.userPrincipal.name != null}">
       <a class="navbar-brand" href="${pageContext.request.contextPath}/home1">
-      <img src="https://i.imgur.com/Rr7fSRn.jpg" class="img-circle" width="50" height="50"/></a>
+      <img src="https://i.imgur.com/H78uXCu.jpg" class="img-rounded" width="150" height="50"/></a>
       </c:if>
  	 </div>
  	 
@@ -24,21 +24,13 @@
 <div class="row">
                 
 
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-center">
 
-       <li> <a href="#">  </a></li>      
+       
+          
        </ul>
 
-                    <form class="navbar-form navbar-left">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
+                    
         
                 <ul class="nav navbar-nav navbar-right">
       <c:if test="${pageContext.request.userPrincipal.name == null}">
@@ -51,8 +43,10 @@
           </ul>
       <ul class="nav navbar-nav navbar-right">
       <c:if test="${pageContext.request.userPrincipal.name != null}">
+     
+       <li><a href="#">Welcome, ${pageContext.request.userPrincipal.name}</a></li>
        <li><a href="${pageContext.request.contextPath}/home1">Home</a></li>
-      <h3 style=" text-align: right ;color:#0B151F;">Welcome, ${pageContext.request.userPrincipal.name}</h3>
+     
       <li><a href="${pageContext.request.contextPath}/cart/showCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
         <li><a href="${pageContext.request.contextPath}/logout"><span class="glyphicon glyphicon-log-out"></span> Log-out</a></li>
         

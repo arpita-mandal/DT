@@ -19,21 +19,23 @@ public class User implements Serializable {
 	private String password;
 	private boolean enabled;
 	private String role;
-	private String email;
+	private int phone;
+	public int getPhone() {
+		return phone;
+	}
+	public void setPhone(int phone) {
+		this.phone = phone;
+	}
+
 	private String gender;
 
-	public String getEmail() {
-		return email;
-	}
-	public Cart getCart() {
+		public Cart getCart() {
 		return cart;
 	}
 	public void setCart(Cart cart) {
 		this.cart = cart;
 	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
 	public String getGender() {
 		return gender;
 	}
