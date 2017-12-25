@@ -18,12 +18,14 @@
 
   <%@include file="menu.jsp" %> 
    <h1>Bill</h1>  
-<table border="2" width="70%" cellpadding="2">  
-<tr><th>Id</th><th>Address</th></tr>  
+   
+<table class="table table-striped" border="2" width="70%" cellpadding="2">  
+<tr><th>Order Id</th><th>Address</th></tr>  
    <tr>  
    <td>${bill.billId}</td>    
-   <td>${bill.billAddress}</td>
-   <td>${bill.total}</td>
+   <td>${bill.billAddress}</td></tr>
+   <tr>
+   <td colspan="2">${bill.total}</td>
    </tr>
    </table>
    </body>

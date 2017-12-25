@@ -219,11 +219,36 @@ public class HomeController {
 	    	 ModelAndView  mv= new ModelAndView("managesubcategory","command",new Subcategory()); 
 		 		mv.addObject("categoryList", categoryDao.showAllCategory());
 		         return mv;  
-		         } 
+	     }
 	     
 	     @RequestMapping(value="/save3",method = RequestMethod.POST)  
-		    public ModelAndView savesubcategory(@ModelAttribute("subcategory") Subcategory subcategory , HttpServletRequest request){  
-		    		
+		    public ModelAndView savesubcategory(@ModelAttribute("subcategory") Subcategory subcategory , HttpServletRequest request, @RequestParam("file") MultipartFile file)
+{  
+		    	byte fileBytes[];
+				FileOutputStream fos = null;
+				
+				String fileName = "";
+				String subcategoryImage = "";
+				ServletContext context = request.getServletContext();
+				String realContextPath = context.getRealPath("/");
+				String un = subcategory.getSubcategoryName();
+				if (file != null){
+					fileName = realContextPath + "/resources/img/" + un + ".jpg";
+					subcategoryImage = "resources/img/" + un + ".jpg";
+					System.out.println("===" + fileName + "===");
+					File fileobj = new File(fileName);
+					try{
+						fos = new FileOutputStream(fileobj);
+						fileBytes = file.getBytes();
+						fos.write(fileBytes);
+					} catch(Exception e) {
+						e.printStackTrace();
+					}
+				}
+				
+				subcategory.setSubcategoryImage(subcategoryImage);	
+	
+
 				subcategoryDao.addSubcategory(subcategory);
 		        return new ModelAndView("redirect:/home1");
 	}

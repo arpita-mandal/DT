@@ -16,7 +16,7 @@
 <%@ include file="menu.jsp" %>
 
 <hr>
- ${product.productName}  <br>  ${product.productPrice} <br> ${product.category.categoryName}  
+ ${product.productName}  <br>  ${product.productPrice} <br> ${product.category.categoryName}  <br>${product.productImage} 
  <c:if test="${pageContext.request.userPrincipal.name != null}">
  <p><a href="${pageContext.request.contextPath}/cart/addItem/${product.productId}" class="btn btn-info btn-lg">
     <span class="glyphicon glyphicon-shopping-cart"></span> ADD TO CART

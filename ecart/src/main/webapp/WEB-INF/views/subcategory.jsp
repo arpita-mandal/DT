@@ -17,7 +17,7 @@
 </head>
 <body >
 <%@ include file="menu.jsp" %>
-fgfgf
+
 <table border="5" width="70%" cellpadding="10">  
 <tr><th></th><th>Name</th></tr>  
 
@@ -28,7 +28,8 @@ fgfgf
    <tr>  
    
    <c:forEach var="subcategory" items="${subcategorylist}">  
-    <td>${subcategory.subcategoryName}</td>  
+    <td>${subcategory.subcategoryName}</td> 
+    <td>${subcategory.subcategoryImage}</td>  
      
    <td><a href="${pageContext.request.contextPath}/subcategoryProductDetails/${subcategory.subcategoryId}">Show</a></td> 
    </c:forEach>

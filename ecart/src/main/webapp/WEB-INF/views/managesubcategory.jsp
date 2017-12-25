@@ -40,12 +40,9 @@ body {
 </head>
 <body >
 <h1>Add New Sub category</h1>  
-       <form:form method="post" action="/ecart/save3" >    
+       <form:form method="post" action="/ecart/save3" enctype="multipart/form-data">    
         <table >    
-        <tr>    
-          <td>SubcategoryId : </td>   
-          <td><form:input path="subcategoryId"  /></td>  
-         </tr>    
+   
          <tr>    
           <td>Sub category Name : </td>   
           <td><form:input path="subcategoryName"  /></td>  
@@ -58,7 +55,18 @@ body {
 					 /></td>
 				<td><form:errors path="category.categoryId" cssClass="error" /></td>
 			</tr>  
+         
+          <td><img src="${pageContext.request.contextPath}/${photo}" height="50" width="50"></td>
+           <tr>
+									<td><form:hidden path="subcategoryImage"/></td>
+								</tr>
+								<tr>
+									<td>Choose Image</td>
+									<td><input type="file" name="file"/></td>
+								</tr>
+         
          <tr>
+         
          <tr>    
           <td> </td>    
           <td><input type="submit" value="Save" /></td>    

@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Subcategory  implements Serializable {
@@ -24,6 +27,24 @@ public class Subcategory  implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="categoryId")
 	Category  category;
+	@Transient
+	private MultipartFile file;
+	private String subcategoryImage;
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+
+	public String getSubcategoryImage() {
+		return subcategoryImage;
+	}
+
+	public void setSubcategoryImage(String subcategoryImage) {
+		this.subcategoryImage = subcategoryImage;
+	}
 
 	public String getSubcategoryId() {
 		return subcategoryId;

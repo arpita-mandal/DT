@@ -21,42 +21,59 @@
 <body>
 
 <div class="container">
-  <h2>Carousel Example</h2>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+  <li data-target="#myCarousel" data-slide-to="3"></li>
+  <li data-target="#myCarousel" data-slide-to="4"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
 
       <div class="item active">
-        <img src="file:///C:/Users/kiit1/Desktop/laa.png" alt="Los Angeles" style="width:100%;">
+        <img src="https://i.imgur.com/FZRaQhX.jpg" alt="him "style="width:100%;">
         <div class="carousel-caption">
-          <h3>Los Angeles</h3>
-          <p>LA is always so much fun!</p>
+          <h3>FOR HIM</h3>
+          <p>Keeping it Cool!</p>
         </div>
       </div>
 
       <div class="item">
-        <img src="http://i.imgur.com/7h2S6bg.jpg" alt="Chicago" style="width:100%;">
+        <img src="https://i.imgur.com/waEeIlm.jpg" alt="her" style="width:100%;">
         <div class="carousel-caption">
-          <h3>Chicago</h3>
-          <p>Thank you, Chicago!</p>
+          <h3>FOR HER</h3>
+          <p>Keeping it Sassy!</p>
         </div>
       </div>
     
       <div class="item">
-        <img src="https://i.imgur.com/Rr7fSRn.jpg" alt="New York" style="width:100%;">
+        <img src="https://i.imgur.com/lPRNN1J.jpg" alt="goodvibes" style="width:100%;">
         <div class="carousel-caption">
-          <h3>New York</h3>
-          <p>We love the Big Apple!</p>
+          <h3>GOOD VIBES</h3>
+          <p>Rise up sunshine!</p>
         </div>
       </div>
   
+  <div class="item">
+        <img src="https://i.imgur.com/NuGJia4.jpg" alt="nyr" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>CHRISTMAS SALE</h3>
+          <p>Santa is finally here!</p>
+        </div>
+      </div>
+      
+  <div class="item">
+        <img src="https://i.imgur.com/0drHgfU.jpg" alt="hoodie" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>HOODIE UP GIRL</h3>
+          <p>According to your mood</p>
+        </div>
+      </div>
+    
     </div>
 
     <!-- Left and right controls -->
@@ -69,7 +86,55 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+<div class="container">
+  <h2>What's trending?</h2>
+  <p></p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>For Him</th>
+        <th>For Her</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><img src="https://i.imgur.com/Y5pOnKH.jpg" alt="trendhim" style="width:100%;"></td>
+        <td><img src="https://i.imgur.com/tF975kW.jpg" alt="trendher" style="width:100%;"></td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+  <h2>Mobile Covers</h2>
+  <td><img src="https://i.imgur.com/4XvQZ7q.jpg" alt="covers" style="width:100%;"></td>
+
+<div class="container">
+  <h2>Mugs</h2>
+  <h4>Choose from a wide range</h4>
+  <p></p>            
+  <table class="table table-striped">
+    
+    <tbody>
+      <tr>
+        <td><img src="https://i.imgur.com/TuIYhKb.jpg" alt="mug1" style="width:100%;"></td>
+        <td><img src="https://i.imgur.com/a0Akugz.jpg" alt="mug2" style="width:100%;"></td>
+        <td> <img src="https://i.imgur.com/euZL5gP.jpg" alt="mug3" style="width:100%;"></td>
+        
+      </tr>
+      </tbody>
+  </table>
+  <h2> Posters</h2>
+          <td><img src="https://i.imgur.com/WF43eYu.jpg" alt="poster" style="width:100%;"></td>
+  
+  
 </div>
+
+
+</body>
+</div>
+
+
 
 </body>
 </html>

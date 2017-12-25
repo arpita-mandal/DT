@@ -15,19 +15,42 @@
 <body>
 <%@ include file="menu.jsp" %>
 
-<hr>
- ${product.productName}  <br>  ${product.productPrice} <br> ${product.subcategory.subcategoryName}  
- <c:if test="${pageContext.request.userPrincipal.name != null}">
- <p><a href="${pageContext.request.contextPath}/cart/addItem/${product.productId}" class="btn btn-info btn-lg">
+<div class="container">
+<div class="well">
+<center>
+<img src=" ${pageContext.request.contextPath}/${product.productImage}" height="400px" width="400px">
+<br><br><table class="table table-hover">
+<tr>
+
+<td width="500px"><h4><strong>Product Name:</strong></h4></td>
+<td><h4><strong><center>${product.productName}</center></strong></h4></td>
+</tr>
+<tr>
+
+<td width="500px"><h4><strong>Product Price</strong></h4>	
+</td>
+<td><h4><strong><center>${product.productPrice}</center></strong></h4>
+</td>
+
+</tr>
+<tr>
+<td width="500px"><h4><strong>Product Description</strong></h4>	
+</td>
+
+
+</tr>
+<tr>
+<td colspan="2"><center> <a href="${pageContext.request.contextPath}/cart/addItem/${product.productId}" class="btn btn-info btn-lg">
     <span class="glyphicon glyphicon-shopping-cart"></span> ADD TO CART
    </a>
-      </p> 
-</c:if>
- <c:if test="${pageContext.request.userPrincipal.name == null}">
- <p><a href="${pageContext.request.contextPath}/loginPage" class="btn btn-info btn-lg">
-    <span class="glyphicon glyphicon-shopping-cart"></span> ADD TO CART
-   </a>
-      </p> 
-</c:if>
+   
+</center>
+</td>
+</tr>
+</table>
+</center>
+</div>
+</div>
+
 </body>
 </html>
