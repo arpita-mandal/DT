@@ -46,7 +46,7 @@ public class UserDaoImpl implements UserDao {
 		// TODO Auto-generated method stub
 		Session session = getSession();
 
-		Query query = session.createQuery("from User where userId = '"+userId+"'");
+		Query query = session.createQuery("from User where userId = '"+userId+"' and discontinue=false");
 		List<User> customerList = query.list();
 		
 		if (customerList ==null || customerList.size()==0)
@@ -66,7 +66,7 @@ public class UserDaoImpl implements UserDao {
 		// TODO Auto-generated method stub
 		Session session = getSession();
 
-		Query query = session.createQuery("from User");
+		Query query = session.createQuery("from User where discontinue=false");
 		List<User> customerList = query.list();
 		return customerList;
 
@@ -101,11 +101,12 @@ public class UserDaoImpl implements UserDao {
 		
 		Session session = getSession();
 
-		Query query = session.createQuery("from User where userId = ?");
+		Query query = session.createQuery("from User where userId =?");
 		query.setString(0, userId);
 
 		User u=(User) query.uniqueResult();
-		session.delete(u);
+		u.setDiscontinue(true);
+		session.update(u);
 		session.flush();
 
 		session.close();

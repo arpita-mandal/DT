@@ -60,11 +60,15 @@ body {
           <td>Price : </td>   
           <td><form:input path="productPrice"  /></td>  
          </tr>    
+         <tr>    
+          <td>Description  :</td>    
+          <td><form:input path="productDescription" /></td>  
+         </tr>
           <tr>
-				<td>Sub Category :</td>
-				<td><form:select path="subcategory.subcategoryId" items="${subcategoryList}" itemLabel="subcategoryName" itemValue="subcategoryId"
+				<td>Category :</td>
+				<td><form:select path="category.categoryId" items="${categoryList}" itemLabel="categoryName" itemValue="categoryId"
 					 /></td>
-				<td><form:errors path="subcategory.subcategoryId" cssClass="error" /></td>
+				<td><form:errors path="category.categoryId" cssClass="error" /></td>
 			</tr>  
          <tr>
 									<td><form:hidden path="productImage"/></td>

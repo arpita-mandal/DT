@@ -60,7 +60,7 @@
     			<ul class="nav navbar-nav ">
     			
     			<c:forEach items="${categoryList}" var="category">
-            <li><a href="${pageContext.request.contextPath}/showSubcategoriesByCategory/${category.categoryId}">${category.categoryName}</a></li>
+            <li><a href="${pageContext.request.contextPath}/categoryProductDetails/${category.categoryId}">${category.categoryName}</a></li>
                
               
              
@@ -72,15 +72,12 @@
 <security:authorize access="hasRole('ROLE_ADMIN')">				
   <li class="dropdown">
         
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage Products <span class="caret"></span></a>
-         <!-- <ul class="dropdown-menu">  is used to create the sub menu items -->
-          <ul class="dropdown-menu">
-          
-          <!-- display category names as menu option  -->
-           <li><a href="${pageContext.request.contextPath}/manageProduct">Add Product</a></li>
-           <li><a href="${pageContext.request.contextPath}/viewproducts">View Product</a></li>
-           </ul>
-        </li> 
+         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage Products <span class="caret"></span></a>
+         <ul class="dropdown-menu">
+         <li><a href="${pageContext.request.contextPath}/manageProduct">Add Product</a></li>
+         <li><a href="${pageContext.request.contextPath}/viewproducts">View Product</a></li>
+         </ul>
+   </li> 
    </security:authorize>
    <security:authorize access="hasRole('ROLE_ADMIN')">				
   <li class="dropdown">
@@ -94,18 +91,7 @@
            </ul>
         </li> 
    </security:authorize>
-   <security:authorize access="hasRole('ROLE_ADMIN')">				
-  <li class="dropdown">
-        
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage Sub-Category <span class="caret"></span></a>
-         <!-- <ul class="dropdown-menu">  is used to create the sub menu items -->
-          <ul class="dropdown-menu">
-          
-          <!-- display category names as menu option  -->
-           <li><a href="${pageContext.request.contextPath}/manageSubcategory">Add Sub-Category</a></li>
-           </ul>
-        </li> 
-   </security:authorize>
+   
    <security:authorize access="hasRole('ROLE_ADMIN')">				
   <li class="dropdown">
         

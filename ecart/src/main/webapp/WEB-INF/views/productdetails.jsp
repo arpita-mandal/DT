@@ -11,6 +11,30 @@
   <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+
+body {
+    background-image: url("https://i.imgur.com/9oPouXw.jpg");
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #2E4053;
+    color: white;
+}
+</style>
+
+
 </head>
 <body>
 <%@ include file="menu.jsp" %>
@@ -22,21 +46,22 @@
 <br><br><table class="table table-hover">
 <tr>
 
-<td width="500px"><h4><strong>Product Name:</strong></h4></td>
+<td width="500px"><h4><strong>Name:</strong></h4></td>
 <td><h4><strong><center>${product.productName}</center></strong></h4></td>
 </tr>
 <tr>
 
-<td width="500px"><h4><strong>Product Price</strong></h4>	
+<td width="500px"><h4><strong>Price:</strong></h4>	
 </td>
 <td><h4><strong><center>${product.productPrice}</center></strong></h4>
 </td>
 
 </tr>
 <tr>
-<td width="500px"><h4><strong>Product Description</strong></h4>	
+<td width="500px"><h4><strong>Description:</strong></h4>	
 </td>
-
+<td><h4><strong><center>${product.productDescription}</center></strong></h4>
+</td>
 
 </tr>
 <tr>

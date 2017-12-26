@@ -15,18 +15,12 @@ public class Category implements Serializable {
 	private String categoryId;
 	private String categoryName;
 	
-//	@OneToMany(mappedBy="category")
-//	List<Product> products;
+@OneToMany(mappedBy="category")
+List<Product> products;
 
-	@OneToMany(mappedBy="category")
-	List<Subcategory> subcategory;
 	
-	public List<Subcategory> getSubcategory() {
-		return subcategory;
-	}
-	public void setSubcategory(List<Subcategory> subcategory) {
-		this.subcategory = subcategory;
-	}
+	
+	
 	public String getCategoryId() {
 		return categoryId;
 	}
@@ -39,12 +33,12 @@ public class Category implements Serializable {
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
-//	public List<Product> getProducts() {
-//		return products;
-//	}
-//	public void setProducts(List<Product> products) {
-//		this.products = products;
-//	}
+	public List<Product> getProducts() {
+		return products;
+	}
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
 
 
 }

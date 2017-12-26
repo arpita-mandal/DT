@@ -53,7 +53,11 @@ body {
          <tr>    
           <td>Name : </td>   
           <td><form:input path="productName"  /></td>  
-         </tr>    
+         </tr>  
+         <tr>    
+          <td>Description  :</td>    
+          <td><form:input path="productDescription" /></td>  
+         </tr>   
          <tr>    
           <td>Price  :</td>    
           <td><form:input path="productPrice" /></td>  

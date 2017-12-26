@@ -23,6 +23,13 @@ public class Product implements Serializable
 	private String  productName;
 	private double productPrice;
 	private boolean discontinue; 
+	private String productDescription;
+	public String getProductDescription() {
+		return productDescription;
+	}
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
 	public boolean isDiscontinue() {
 		return discontinue;
 	}
@@ -32,26 +39,26 @@ public class Product implements Serializable
 	@Transient
 	private MultipartFile file;
 	
-//	@ManyToOne
-//	@JoinColumn(name="categoryId")
-//	Category  category;
-	
 	@ManyToOne
-	@JoinColumn(name="subcategoryId")
-	Subcategory subcategory;
+	@JoinColumn(name="categoryId")
+	Category  category;
+	
+//	@ManyToOne
+//	@JoinColumn(name="subcategoryId")
+//	Subcategory subcategory;
 
-	public Subcategory getSubcategory() {
-		return subcategory;
-	}
-	public void setSubcategory(Subcategory subcategory) {
-		this.subcategory = subcategory;
-	}
-//	public Category getCategory() {
-//		return category;
+//	public Subcategory getSubcategory() {
+//		return subcategory;
 //	}
-//	public void setCategory(Category category) {
-//		this.category = category;
+//	public void setSubcategory(Subcategory subcategory) {
+//		this.subcategory = subcategory;
 //	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	public String getProductId() {
 		return productId;
 	}

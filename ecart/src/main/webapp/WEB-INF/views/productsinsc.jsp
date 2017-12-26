@@ -4,7 +4,7 @@
   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
+
 <head>
   <title>TEE STORE</title>
   <meta charset="utf-8">
@@ -13,23 +13,43 @@
   <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <style> 
+body {
+    background-image: url("https://i.imgur.com/asWYlhH.jpg");
+}
+</style>
 </head>
-</head>
+
 <body >
 <%@ include file="menu.jsp" %>
-<table border="5" width="70%" cellpadding="10">  
-<tr><th></th><th>Name</th></tr>  
-    
+
+<div class="container">
+<div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+<table  class="table table-hover" >  
+<tr><th>Image</th><th>Name</th><th>Price</th><th>Show</th></tr>  
+   <c:forEach var="product" items="${productList}">   
    <tr>  
-   sxdcf
-   <c:forEach var="product" items="${productList}">  
-    <td>${product.productName}</td>  
-    
-     
-   <td><a href="${pageContext.request.contextPath}/ProductDetails/${product.productId}">Show</a></td> 
-   </c:forEach>
-   </tr>  
+   <td><img src="${pageContext.request.contextPath}/${product.productImage}" height="150" width="150"></td> 
+   <td><h4><b>${product.productName}</b></h4></td>  
+   
+    <td><h4><b>${product.productPrice}</b></h4></td>   
   
+   <td><a href="${pageContext.request.contextPath}/ProductDetails/${product.productId}"><button type="button" class="btn btn-success" color="#AEB6BF">
+                         <span  class="glyphicon glyphicon-ok"></span>   View
+                        </button></a></td>
+    
+
+    
+   </tr>  
+   </c:forEach>  
    </table>  
+   </div>
+   </div>
+   </div>
+</body>
+</html>
+
+
 </body>
 </html>

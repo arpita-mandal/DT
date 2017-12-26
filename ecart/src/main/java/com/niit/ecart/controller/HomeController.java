@@ -20,11 +20,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.ecart.dao.CategoryDao;
 import com.niit.ecart.dao.ProductDao;
-import com.niit.ecart.dao.SubcategoryDao;
+//import com.niit.ecart.dao.SubcategoryDao;
 import com.niit.ecart.dao.UserDao;
 import com.niit.ecart.model.Category;
 import com.niit.ecart.model.Product;
-import com.niit.ecart.model.Subcategory;
+//import com.niit.ecart.model.Subcategory;
 import com.niit.ecart.model.User;
 
 
@@ -36,9 +36,8 @@ public class HomeController {
 	 ProductDao productDao;
 	 @Autowired
 	 UserDao userDao;
-	 @Autowired
-	 SubcategoryDao  subcategoryDao;
-	 
+//	 @Autowired
+//	 SubcategoryDao  subcategoryDao;
 	  
 	  @RequestMapping("/")  
 	    public ModelAndView index(HttpSession session){  
@@ -46,6 +45,8 @@ public class HomeController {
 
 		 session.setAttribute("categoryList", categoryDao.showAllCategory());
 		 mv.addObject("categoryList", categoryDao.showAllCategory());
+		// mv.addObject("subcategoryList", subcategoryDao.showAllSubcategory());
+			
 		return mv;  
 	    } 
 	  @RequestMapping("/home1")  
@@ -53,24 +54,25 @@ public class HomeController {
 		 ModelAndView mv= new ModelAndView("home");
 		 session.setAttribute("categoryList", categoryDao.showAllCategory());
 		 mv.addObject("categoryList", categoryDao.showAllCategory());
+		 //mv.addObject("subcategoryList", subcategoryDao.showAllSubcategory());
 		
 	        return mv;  
 	    }
 	  
 	 
-	  @RequestMapping("/showSubcategoriesByCategory/{categoryId}")  
-	    public ModelAndView showSubcategoriesByCategory(@PathVariable String categoryId ){  
-		System.out.println("cat id "+categoryId);
-		 ModelAndView mv= new ModelAndView("subcategory");
-		 mv.addObject("subcategorylist", categoryDao.listByCategoryId(categoryId));
-	        return mv;  
-	    }
+//	  @RequestMapping("/showSubcategoriesByCategory/{categoryId}")  
+//	    public ModelAndView showSubcategoriesByCategory(@PathVariable String categoryId ){  
+//		System.out.println("cat id "+categoryId);
+//		 ModelAndView mv= new ModelAndView("subcategory");
+//		 mv.addObject("subcategorylist", categoryDao.listByCategoryId(categoryId));
+//	        return mv;  
+//	    }
 	  
-	  @RequestMapping("/subcategoryProductDetails/{subcategoryId}")  
-	    public ModelAndView showProductsByCategory(@PathVariable String subcategoryId ){  
+	  @RequestMapping("/categoryProductDetails/{categoryId}")  
+	    public ModelAndView showProductsByCategory(@PathVariable String categoryId ){  
 		 //System.out.println("cat id "+subcategoryId);
 		 ModelAndView mv= new ModelAndView("productsinsc");
-		 mv.addObject("productList", subcategoryDao.listBySubcategoryId(subcategoryId));
+		 mv.addObject("productList", categoryDao.listByCategoryId(categoryId));
 	        return mv;  
 	    } 
 	  
@@ -92,7 +94,7 @@ public class HomeController {
 	 	@RequestMapping("/manageProduct")  
 	     public ModelAndView showformproduct(){  
 	 		ModelAndView  mv= new ModelAndView("manageproduct","command",new Product()); 
-	 		mv.addObject("subcategoryList", subcategoryDao.showAllSubcategory());
+	 		mv.addObject("categoryList",categoryDao.showAllCategory());
 	         return mv;  
 	     } 
 	 	@RequestMapping("/manageUser")  
@@ -109,7 +111,7 @@ public class HomeController {
 		  if(temp!=null)
 		  {
 			  ModelAndView  mv= new ModelAndView("manageproduct","command",product); 
-		 		mv.addObject("subcategoryList", subcategoryDao.showAllSubcategory());
+		 		mv.addObject("categoryList", categoryDao.showAllCategory());
 		 		mv.addObject("error", "Product Id already exists");
 		         return mv;
 		  }
@@ -214,43 +216,44 @@ public class HomeController {
 				categoryDao.addCategory(category);
 		        return new ModelAndView("redirect:/home1");
 	}
-	     @RequestMapping("/manageSubcategory")  
-	     public ModelAndView showformsubcategory(){  
-	    	 ModelAndView  mv= new ModelAndView("managesubcategory","command",new Subcategory()); 
-		 		mv.addObject("categoryList", categoryDao.showAllCategory());
-		         return mv;  
-	     }
-	     
-	     @RequestMapping(value="/save3",method = RequestMethod.POST)  
-		    public ModelAndView savesubcategory(@ModelAttribute("subcategory") Subcategory subcategory , HttpServletRequest request, @RequestParam("file") MultipartFile file)
-{  
-		    	byte fileBytes[];
-				FileOutputStream fos = null;
-				
-				String fileName = "";
-				String subcategoryImage = "";
-				ServletContext context = request.getServletContext();
-				String realContextPath = context.getRealPath("/");
-				String un = subcategory.getSubcategoryName();
-				if (file != null){
-					fileName = realContextPath + "/resources/img/" + un + ".jpg";
-					subcategoryImage = "resources/img/" + un + ".jpg";
-					System.out.println("===" + fileName + "===");
-					File fileobj = new File(fileName);
-					try{
-						fos = new FileOutputStream(fileobj);
-						fileBytes = file.getBytes();
-						fos.write(fileBytes);
-					} catch(Exception e) {
-						e.printStackTrace();
-					}
-				}
-				
-				subcategory.setSubcategoryImage(subcategoryImage);	
-	
-
-				subcategoryDao.addSubcategory(subcategory);
-		        return new ModelAndView("redirect:/home1");
-	}
-
-} 
+}
+//	     @RequestMapping("/manageSubcategory")  
+//	     public ModelAndView showformsubcategory(){  
+//	    	 ModelAndView  mv= new ModelAndView("managesubcategory","command",new Subcategory()); 
+//		 		mv.addObject("categoryList", categoryDao.showAllCategory());
+//		         return mv;  
+//	     }
+//	     
+//	     @RequestMapping(value="/save3",method = RequestMethod.POST)  
+//		    public ModelAndView savesubcategory(@ModelAttribute("subcategory") Subcategory subcategory , HttpServletRequest request, @RequestParam("file") MultipartFile file)
+//{  
+//		    	byte fileBytes[];
+//				FileOutputStream fos = null;
+//				
+//				String fileName = "";
+//				String subcategoryImage = "";
+//				ServletContext context = request.getServletContext();
+//				String realContextPath = context.getRealPath("/");
+//				String un = subcategory.getSubcategoryName();
+//				if (file != null){
+//					fileName = realContextPath + "/resources/img/" + un + ".jpg";
+//					subcategoryImage = "resources/img/" + un + ".jpg";
+//					System.out.println("===" + fileName + "===");
+//					File fileobj = new File(fileName);
+//					try{
+//						fos = new FileOutputStream(fileobj);
+//						fileBytes = file.getBytes();
+//						fos.write(fileBytes);
+//					} catch(Exception e) {
+//						e.printStackTrace();
+//					}
+//				}
+//				
+//				subcategory.setSubcategoryImage(subcategoryImage);	
+//	
+//
+//				subcategoryDao.addSubcategory(subcategory);
+//		        return new ModelAndView("redirect:/home1");
+//	}
+//
+//} 

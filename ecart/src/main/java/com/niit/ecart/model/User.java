@@ -20,6 +20,13 @@ public class User implements Serializable {
 	private boolean enabled;
 	private String role;
 	private int phone;
+	private boolean discontinue;
+	public boolean isDiscontinue() {
+		return discontinue;
+	}
+	public void setDiscontinue(boolean discontinue) {
+		this.discontinue = discontinue;
+	}
 	public int getPhone() {
 		return phone;
 	}

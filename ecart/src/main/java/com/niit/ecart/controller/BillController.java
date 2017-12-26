@@ -22,7 +22,6 @@ import com.niit.ecart.dao.CartDao;
 import com.niit.ecart.dao.CartItemDao;
 import com.niit.ecart.dao.CategoryDao;
 import com.niit.ecart.dao.ProductDao;
-import com.niit.ecart.dao.SubcategoryDao;
 import com.niit.ecart.dao.UserDao;
 import com.niit.ecart.model.Bill;
 import com.niit.ecart.model.CartItem;
