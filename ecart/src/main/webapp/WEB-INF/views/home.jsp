@@ -13,6 +13,12 @@
  <link rel="stylesheet" href="<c:url value="/resources/css/menu2.css"/>">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+body {
+    background-image: url("https://i.imgur.com/9oPouXw.jpg");
+}
+</style>
 </head>
 
 <body>
@@ -99,15 +105,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><img src="https://i.imgur.com/Y5pOnKH.jpg" alt="trendhim" style="width:100%;"></td>
-        <td><img src="https://i.imgur.com/tF975kW.jpg" alt="trendher" style="width:100%;"></td>
+        <td><a href="${pageContext.request.contextPath}/categoryProductDetails/1"><img src="https://i.imgur.com/Y5pOnKH.jpg" alt="trendhim" style="width:100%;"></a></td>
+        <td><a href="${pageContext.request.contextPath}/categoryProductDetails/2"><img src="https://i.imgur.com/tF975kW.jpg" alt="trendher" style="width:100%;"></a></td>
         
       </tr>
       
     </tbody>
   </table>
   <h2>Mobile Covers</h2>
-  <td><img src="https://i.imgur.com/4XvQZ7q.jpg" alt="covers" style="width:100%;"></td>
+  <td><a href="${pageContext.request.contextPath}/categoryProductDetails/3"><img src="https://i.imgur.com/4XvQZ7q.jpg" alt="covers" style="width:100%;"></a></td>
 
 <div class="container">
   <h2>Mugs</h2>
@@ -117,22 +123,36 @@
     
     <tbody>
       <tr>
-        <td><img src="https://i.imgur.com/TuIYhKb.jpg" alt="mug1" style="width:100%;"></td>
-        <td><img src="https://i.imgur.com/a0Akugz.jpg" alt="mug2" style="width:100%;"></td>
-        <td> <img src="https://i.imgur.com/euZL5gP.jpg" alt="mug3" style="width:100%;"></td>
+        <td><a href="${pageContext.request.contextPath}/categoryProductDetails/4"><img src="https://i.imgur.com/TuIYhKb.jpg" alt="mug1" style="width:100%;"></a></td>
+        <td><a href="${pageContext.request.contextPath}/categoryProductDetails/4"><img src="https://i.imgur.com/a0Akugz.jpg" alt="mug2" style="width:100%;"></a></td>
+        <td><a href="${pageContext.request.contextPath}/categoryProductDetails/4"><img src="https://i.imgur.com/euZL5gP.jpg" alt="mug3" style="width:100%;"></a></td>
         
       </tr>
       </tbody>
   </table>
   <h2> Posters</h2>
-          <td><img src="https://i.imgur.com/WF43eYu.jpg" alt="poster" style="width:100%;"></td>
+          <td><a href="${pageContext.request.contextPath}/categoryProductDetails/5"><img src="https://i.imgur.com/WF43eYu.jpg" alt="poster" style="width:100%;"></a></td>
   
   
-</div>
 
+
+<footer class="container-fluid text-center">
+  <h2 class="text-center">CONTACT</h2>
+  <p>Online Store Copyright</p>  
+  <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> teestore@something.com</p>
+    </div>
+  <form class="form-inline">Get deals:
+    <input type="email" class="form-control" size="50" placeholder="Email Address">
+    <button type="button" class="btn btn-danger">Sign Up</button>
+  </form>
+</footer>
 
 </body>
-</div>
+
 
 
 

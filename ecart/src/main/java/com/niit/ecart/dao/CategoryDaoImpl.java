@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.ecart.model.Category;
 import com.niit.ecart.model.Product;
-//import com.niit.ecart.model.Subcategory;
+
 @Repository("categoryDao")
 @Transactional
 public class CategoryDaoImpl implements CategoryDao {
@@ -47,20 +47,6 @@ public class CategoryDaoImpl implements CategoryDao {
 	        System.out.println("list "+productList);
 			return productList;
 		}
-//	public List<Subcategory> listByCategoryId(String categoryId) {
-//		// TODO Auto-generated method stub
-//		Session session = getSession();
-//
-//		Query query = session.createQuery("from Subcategory where category.categoryId = ?");
-//		query.setString(0, categoryId);
-//		List<Subcategory> subcategoryList = query.list();
-//		
-//		System.out.println("sub "+subcategoryList.get(0).getSubcategoryName());
-//		System.out.println();
-//        session.close();
-//        //System.out.println("list "+productList);
-//		return subcategoryList;
-//	}
 
 	public void addCategory(Category category) {
 		

@@ -66,13 +66,15 @@ th {
  <table class="table">
     <thead>
     <c:set var="total" scope="session" />
-<tr><th>Name</th><th>Quantity</th><th>Category Name</th><th>Product Price</th><th>Delete</th></tr>  
+<tr><th>Image</th><th>Name</th><th>Quantity</th><th>Product Price</th><th>Delete</th></tr>  
    <c:forEach var="content" items="${cartContent}">   
    <tr>  
-   
-   <td  width="20%">${content.product.productName}</td>  
+   <td>
+   <div class="col-sm-6">
+          <div class="well">
+   <img src="${pageContext.request.contextPath}/${content.product.productImage}" height="150" width="150"></td>
+   <td  width="20%">${content.product.productName}</td>
    <td>${content.quantity}</td>
-   <td> ${content.product.subcategory.subcategoryName} </td>
    <td>${content.subTotal}</td>
    <td><a href="${pageContext.request.contextPath}/cart/deletefromcart/${content.cartItemId}">Delete</a></td>
 
@@ -81,10 +83,10 @@ th {
    
    </tr>
    </c:forEach>  
-   <tr><td colspan="4">Total:  ${total}</td> </tr>
-   <tr><a href="${pageContext.request.contextPath}/billform">Checkout</a></tr>
-   </table>  
+   <tr><td colspan="4"><h4><strong>Total:</strong>  ${total}</h4></td> 
+   <td><h4><strong><a href="${pageContext.request.contextPath}/billform">Checkout</a></strong></h4></td></tr>
    
+   </table>  
    
    
    

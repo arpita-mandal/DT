@@ -51,7 +51,7 @@ th, td {
 tr:nth-child(even){background-color: #f2f2f2}
 
 th {
-    background-color: #4CAF50;
+    background-color: #D2B4DE;
     color: white;
 }
 </style>
@@ -62,21 +62,21 @@ th {
 <h1>PRODUCTS LIST</h1>  
 <table class="table table-condensed" border="2" width="70%" cellpadding="2">  
 <tr>
-	<th>Id</th>
-	<th>Name</th>
-	<th>Address</th>
-	<th>Image</th>
-	<th>Edit</th>
-	<th>Delete</th>
+	<th><h4><center><b>Id</b></center><h4></th>
+	<th><h4><center><b>Name</b></center></h4></th>
+	<th><h4><center><b>Price</b></center></h4></th>
+	<th><h4><center><b>Image</b></center></h4></th>
+	<th><h4><center><b>Edit</b></center></h4></th>
+	<th><h4><center><b>Delete</b></center></h4></th>
 	
 	</tr>  
    <c:forEach var="product" items="${list}">   
    <tr>  
-   <td>${product.productId}</td>  
-   <td>${product.productName}</td>  
-   <td>${product.productPrice}</td>
+   <td><center>${product.productId}</center></td>  
+   <td><center>${product.productName}</center></td>  
+   <td><center>${product.productPrice}</center></td>
      
-  <td><img src="${pageContext.request.contextPath}/${product.productImage}" height="50" width="50"></td>
+   <td><img src="${pageContext.request.contextPath}/${product.productImage}" height="150" width="150"></td>
    <td><a href="editproducts/${product.productId}"><span class="glyphicon glyphicon-edit"></span></a></td>  
    <td><a href="deleteproducts/${product.productId}"><span class="glyphicon glyphicon-trash"></span></a></td>  
    </tr>  

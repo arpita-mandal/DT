@@ -43,16 +43,6 @@ public class Product implements Serializable
 	@JoinColumn(name="categoryId")
 	Category  category;
 	
-//	@ManyToOne
-//	@JoinColumn(name="subcategoryId")
-//	Subcategory subcategory;
-
-//	public Subcategory getSubcategory() {
-//		return subcategory;
-//	}
-//	public void setSubcategory(Subcategory subcategory) {
-//		this.subcategory = subcategory;
-//	}
 	public Category getCategory() {
 		return category;
 	}

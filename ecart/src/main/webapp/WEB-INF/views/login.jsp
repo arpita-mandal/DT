@@ -13,9 +13,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
+body {
+    background-image: url("https://i.imgur.com/9oPouXw.jpg");
+}
 </style>
 </head>
-<body style="background:  #e6e6e6">
+<body>
  <c:if test="${param.error == 'true'}">
          <div style="color:red;margin:10px 0px;">
           
@@ -26,52 +29,37 @@
     </c:if>
 <%@include file="menu.jsp" %>
 <h2 style="color: #595959;text-align: center;"> Login</h2>
-<form name='f' action="${pageContext.request.contextPath}/j_spring_security_check" 
 
-method='POST'>
+<form  name='f' action="${pageContext.request.contextPath}/j_spring_security_check" method='POST'>
+  
+  <div class="container">
+  <div class="form-group">
+    <label><b>Username</b></label>
+    <input type="text" class="form-control"	 placeholder="Enter Username" name="username" required>
+<br>
+<br>
 
-<div class="container"  >
-  <form>
-    <div class="form-group" style="margin-top: 50px; color: #595959; width: 75%;">
-      <label class="control-label col-sm-2" for="username">User Name:</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" required>
-      </div>
-      
-    </div>
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password"  class="form-control" name="password" required>
+<br>
+    <input type="checkbox" checked="checked"> Remember me
     <br>
-    <div class="form-group" style="margin-top: 50px; color: #595959; width:75%;">
-      <label class="control-label col-sm-2" for="password">Password:</label>
-      <div class="col-sm-10">          
-        <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password" required>
-      </div>
-    </div>
-    <div class="form-group" style="margin-top: 50px; color: #595959;">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <div class="checkbox">
-          <label><input type="checkbox" name="remember"> Remember me</label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group" style="margin-top: 50px; color: #595959; width: 75%">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
-      </div>
-      <div class="form-group" style="margin-top: 50px; color: #595959;">        
-      <div class="col-sm-offset-2 col-sm-10">
-      New User? Click Here 
+    <br>
+     New User? Click Here 
        <a href="${pageContext.request.contextPath}/usersform" class="btn btn-info btn-sm style:"background:#808080;">
-         <span class="glyphicon glyphicon-user"></span>Signup</a></div> 
-      </div>
-      
+         <span class="glyphicon glyphicon-user"></span>Signup</a>
+         <br>
+  <center >      
+ 
+    <button type="submit" class="btn btn-primary btn-lg btn-success" >Login</button>
+    </center>
+  <br>
+   <center>
+  
 </div>
-
-
-    </form>
-
-
-</div>
-  </form>
+  </div>
+<br>
+<br>
+</form>
 </body>
-
 </html>

@@ -40,42 +40,31 @@ th {
 <%@ include file="menu.jsp" %>
 
 <div class="container">
+ <div class="row">
+        <div class="col-sm-6">
 <div class="well">
 <center>
 <img src=" ${pageContext.request.contextPath}/${product.productImage}" height="400px" width="400px">
-<br><br><table class="table table-hover">
-<tr>
-
-<td width="500px"><h4><strong>Name:</strong></h4></td>
-<td><h4><strong><center>${product.productName}</center></strong></h4></td>
-</tr>
-<tr>
-
-<td width="500px"><h4><strong>Price:</strong></h4>	
-</td>
-<td><h4><strong><center>${product.productPrice}</center></strong></h4>
-</td>
-
-</tr>
-<tr>
-<td width="500px"><h4><strong>Description:</strong></h4>	
-</td>
-<td><h4><strong><center>${product.productDescription}</center></strong></h4>
-</td>
-
-</tr>
-<tr>
-<td colspan="2"><center> <a href="${pageContext.request.contextPath}/cart/addItem/${product.productId}" class="btn btn-info btn-lg">
-    <span class="glyphicon glyphicon-shopping-cart"></span> ADD TO CART
+</div>
+</div>
+<div class="col-sm-6">
+          <div class="well">
+<p><h4><strong>Name: </strong>${product.productName}</h4></p>
+<br>
+<p><h4><strong>Price: </strong>${product.productPrice}</h4></p>
+<br>
+<p><h4><strong>Description: </strong></h4><h6>${product.productDescription}</h6></p>	
+</div>
+<center> <a href="${pageContext.request.contextPath}/cart/addItem/${product.productId}" class="btn btn-info btn-lg">
+    <span class="glyphicon glyphicon-shopping-cart"></span> ADD TO BAG
    </a>
    
 </center>
-</td>
-</tr>
-</table>
+
 </center>
 </div>
 </div>
 
+</div>
 </body>
 </html>

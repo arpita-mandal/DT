@@ -51,7 +51,7 @@ th, td {
 tr:nth-child(even){background-color: #f2f2f2}
 
 th {
-    background-color: #4CAF50;
+    background-color: #D2B4DE;
     color: white;
 }
 </style>
@@ -75,7 +75,7 @@ th {
    <td>${user.userName}</td>  
    <td>${user.userAddress}</td>
      
-  <td><img src="${pageContext.request.contextPath}/${user.userImage}" height="50" width="50"></td>
+  <td><img src="${pageContext.request.contextPath}/${user.userImage}" height="150" width="150"></td>
    <td><a href="editusers/${user.userId}"><span class="glyphicon glyphicon-edit"></span></a></td>  
    <td><a href="deleteusers/${user.userId}"><span class="glyphicon glyphicon-trash"></span></a></td>  
    </tr>  

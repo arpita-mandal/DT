@@ -74,13 +74,13 @@ body {
           <th>Create Password :</th>  
           </tr>
           <tr>  
-          <td><form:password path="password"  id="txtPassword" /></td>  
+          <td><form:password path="password"  id="txtPassword" class="form-control" /></td>  
          </tr>   
          <tr>    
           <th>Confirm Password:</th>  
           </tr>
           <tr>  
-          <td><input type="password" id="txtConfirmPassword" /></td>  
+          <td><input type="password" id="txtConfirmPassword" class="form-control" /></td>  
          </tr>   
             
        
@@ -100,7 +100,7 @@ body {
 <form:radiobutton path="gender" value="Female"/>Female</th>
          <tr>    
           <td> </td>    
-          <td><input class="btn-success" type="submit" value="Save" /></td>    
+          <td><input class="btn-success" type="submit" value="Save" onclick="return Validate()"/></td>    
          </tr>    
         </table>    
         

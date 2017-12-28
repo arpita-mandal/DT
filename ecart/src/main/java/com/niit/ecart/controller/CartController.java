@@ -53,7 +53,7 @@ public class CartController {
 		 else
 		 {
 			 mv.addObject("cartContent", cartItems);
-			// mv.addObject("grandTotal", cart.getGrandTotal());
+			
 		 }
 		 return mv;
 	 }
@@ -72,7 +72,6 @@ public class CartController {
 		 System.out.println("logged in user "+id);
 		 Product product = productDao.showdDetailsByProductId(productId);
 		 User u=userDao.getUsersById(id);
-		 //Cart cart = cartDao.getCartByUserId(id);
 		 Cart cart=u.getCart();
 		 		 
 		 System.out.println("Yes cart");

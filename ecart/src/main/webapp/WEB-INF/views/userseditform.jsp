@@ -44,9 +44,9 @@ body {
 </head>
 <body >  
 <%@ include file="menu.jsp" %>
- photo :  ${photo}
-        <h1>Edit Users</h1>  
-       <form:form method="POST" action="/proj1/editsave" enctype="multipart/form-data">
+ ${photo}
+        <h1>Edit User</h1>  
+       <form:form method="POST" action="/ecart/editsave" enctype="multipart/form-data">
         
         <table>    
         <tr>  
@@ -61,7 +61,7 @@ body {
           <td>Address  :</td>    
           <td><form:input path="userAddress" /></td>  
          </tr>   
-         aaa
+         
           <td><img src="${pageContext.request.contextPath}/${photo}" height="50" width="50"></td>
            <tr>
 									<td><form:hidden path="userImage"/></td>

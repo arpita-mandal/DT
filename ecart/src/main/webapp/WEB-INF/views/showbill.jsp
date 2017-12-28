@@ -24,19 +24,29 @@ body {
 <body>
 
   <%@include file="menu.jsp" %> 
-   <h1>Order Receipt</h1>  
    <div class="container">
    <div class="row">
-        <div class="col-sm-12 col-md-10 col-md-offset-1">
-   <table class="table table-striped"  border="2" width="70%" cellpadding="2">  
-   <center><tr><th>Order Id</th><th>Address</th></tr></center>  
-   <tr>  
-   <td>${bill.billId}</td>    
-   <td>${bill.billAddress}</td></tr>
-   <tr>
-   <td colspan="2">Total: ${bill.total}</td>
-   </tr>
-   </table>
-   <button type="button" class="btn"><a href="${pageContext.request.contextPath}/home1">Continue Shopping</a></button>
-   </div></div></div></body>
+        <div class="col-md-8 col-md-offset-2">
+        
+       <div class="panel panel-default text-center">
+      
+        <div class="panel-heading">
+        <h1>Order Receipt</h1></div>
+        <div class="panel-body">
+        <p></p>
+           <p><strong>Order Id: ${bill.billId}</strong></p> 
+           
+           <p><strong>Address: </strong>${bill.billAddress}</p>  
+           <br>
+           <p><strong>Order Date:</strong> ${bill.billDate}</p> 
+   
+ </center> </div>
+  <div class="panel-footer">
+   <strong><center>Total: ${bill.total}</center></strong>
+     <button type="button" class="btn"><a href="${pageContext.request.contextPath}/home1">Continue Shopping</a></button>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div></body>
    </html>

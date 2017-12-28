@@ -62,7 +62,12 @@ body {
           <td>Price  :</td>    
           <td><form:input path="productPrice" /></td>  
          </tr>   
-          
+          <tr>
+				<td>Category:</td>
+				<td><form:select path="category.categoryId" itemLabel="categoryName" itemValue="categoryId" items="${categoryList}"
+					 /></td>
+				<td><form:errors path="category.categoryId" cssClass="error" /></td>
+			</tr>
            
             
          <td><img src="${pageContext.request.contextPath}/${photo}" height="50" width="50"></td>
